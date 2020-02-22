@@ -1,3 +1,7 @@
+# development env folder
+rosenv/
+.vscode/
+
 devel/
 logs/
 build/
