@@ -32,7 +32,7 @@ $ rostopic echo /qr_word
 
 
 
-5. Send the meaningful sentence back to the robot on the topic sentence
+5. Send the meaningful sentence back to the robot on the topic `sentence`
 ```
 $ rostopic pub sentence std_msgs/String "The meaningful sentence is here"
 ```
