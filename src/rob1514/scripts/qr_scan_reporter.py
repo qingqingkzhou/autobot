@@ -39,25 +39,54 @@
 import rospy
 from std_msgs.msg import String
 
-def talker():
+import cv2
+import numpy as np
+from pyzbar import pyzbar
+
+
+def scan_qr_code(word_array):
+    cap = cv2.VideoCapture(0)
+    
+    while True:
+        _, frame = cap.read()
+        decodedObjects = pyzbar.decode(frame)
+        #decodedObjects = ["qrcode" + str(n)]
+        
+        if decodedObjects:
+            for obj in decodedObjects:
+                #print("Data", obj.data)
+                qr_word = str(obj.data)
+                #qr_word = str(obj)
+                if qr_word not in word_array:
+                    word_array.append(qr_word)
+            
+            return word_array
+
+
+def reporter():
     '''
-    topic: chatter
+    topic: qr_word
     message type: String
-    node name: talker
+    node name: qr_scan_reporter
     anonymous = True ensures that your node has a unique name by adding random numbers to the end of NAME
     '''
-    pub = rospy.Publisher('chatter', String, queue_size = 10)
-    rospy.init_node('talker', anonymous = True)
-    rate = rospy.Rate(10) # 10hz
+    pub = rospy.Publisher('qr_word', String, queue_size = 10)
+    rospy.init_node('qr_scan_reporter', anonymous = True)
+    rate = rospy.Rate(1) # 1hz
 
+    word_array = []
+    #counter = 0
     while not rospy.is_shutdown():
-        hello_str = "hello world %s" % rospy.get_time()
-        rospy.loginfo(hello_str)
-        pub.publish(hello_str)
+        #rospy.loginfo(hello_str)
+        #counter += 1
+        #pub.publish(', '.join(scan_qr_code(word_array, counter)))
+        if scan_qr_code(word_array):
+            pub.publish(', '.join(word_array))
+
         rate.sleep()
 
 if __name__ == '__main__':
     try:
-        talker()
+        reporter()
     except rospy.ROSInterruptException:
         pass
