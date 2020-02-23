@@ -31,11 +31,8 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 # 
-# Revision $Id$
 
-# # Simple talker demo that published std_msgs/Strings messages
-# # to the 'chatter' topic
-
+import sys
 import rospy
 from std_msgs.msg import String
 
@@ -50,43 +47,61 @@ def scan_qr_code(word_array):
     while True:
         _, frame = cap.read()
         decodedObjects = pyzbar.decode(frame)
-        #decodedObjects = ["qrcode" + str(n)]
         
         if decodedObjects:
             for obj in decodedObjects:
-                #print("Data", obj.data)
                 qr_word = str(obj.data)
-                #qr_word = str(obj)
                 if qr_word not in word_array:
                     word_array.append(qr_word)
             
             return word_array
 
+def scan_qr_code_fake(word_array, n):
+    
+    decodedObjects = ["qrcode" + str(n)]
+        
+    if decodedObjects:
+        for obj in decodedObjects:
+            qr_word = str(obj)
+            if qr_word not in word_array:
+                word_array.append(qr_word)
+            
+        return word_array
 
-def reporter():
+def reporter(mode):
     '''
     topic: qr_word
     message type: String
-    node name: qr_scan_reporter
+    node name: qr_reporter
     anonymous = True ensures that your node has a unique name by adding random numbers to the end of NAME
     '''
     pub = rospy.Publisher('qr_word', String, queue_size = 10)
-    rospy.init_node('qr_scan_reporter', anonymous = True)
+    rospy.init_node('qr_reporter', anonymous = True)
+    rospy.loginfo('qr_reporter node running in %s mode', mode)
+    
     rate = rospy.Rate(1) # 1hz
 
     word_array = []
-    #counter = 0
+    counter = 0
     while not rospy.is_shutdown():
-        #rospy.loginfo(hello_str)
-        #counter += 1
-        #pub.publish(', '.join(scan_qr_code(word_array, counter)))
-        if scan_qr_code(word_array):
-            pub.publish(', '.join(word_array))
+        if mode == 'normal':
+            if scan_qr_code(word_array):
+                pub.publish(', '.join(word_array))
+        else:
+            counter += 1
+            if scan_qr_code_fake(word_array, counter):
+                pub.publish(', '.join(word_array))
 
         rate.sleep()
-
+        
+        
 if __name__ == '__main__':
+    mode = 'normal'
+    
+    if len(sys.argv):
+        mode = str(sys.argv[1])
+
     try:
-        reporter()
+        reporter(mode)
     except rospy.ROSInterruptException:
         pass

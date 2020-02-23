@@ -36,30 +36,41 @@
 ## Simple talker demo that listens to std_msgs/Strings published 
 ## to the 'chatter' topic
 
+import sys
 import rospy
 from std_msgs.msg import String
 import pyttsx3
 
-def callback(data):
+def callback(data, mode):
     rospy.loginfo(rospy.get_caller_id() + ' Say: %s', data.data)
-    #TODO: tts says the sentence
-    engine = pyttsx3.init()
-    engine.say(data.data)
+    
+    if mode == 'normal':
+        #TODO: tts says the sentence
+        engine = pyttsx3.init()
+        engine.say(data.data)
 
 
-def listener():
+def listener(mode):
 
     # In ROS, nodes are uniquely named. If two nodes with the same
     # name are launched, the previous one is kicked off. The
     # anonymous=True flag means that rospy will choose a unique
     # name for our 'listener' node so that multiple listeners can
     # run simultaneously.
-    rospy.init_node('listener', anonymous=True)
+    
+    rospy.init_node('speaker', anonymous=True)
+    rospy.Subscriber('sentence', String, callback, mode)
 
-    rospy.Subscriber('sentence', String, callback)
-
+    rospy.loginfo('Speaker node running in %s mode', mode)
+    
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 
 if __name__ == '__main__':
-    listener()
+    
+    mode = 'normal'
+    
+    if len(sys.argv):
+        mode = str(sys.argv[1])
+
+    listener(mode)
