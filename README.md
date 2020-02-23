@@ -4,18 +4,25 @@ autobot (UofT ROB1514 Project)
 ## QR code scan, decode and form meaningful sentence procedure:
 
 **Running on robot notebook:**
-
-1. A node `qr_scan_reporter` will publish scanned-decoded word onto topic `qr_word` every 1 second with all the currently collected words. Message format: `word1, word2, word3, ...`
+- Option 1: using launch file:
 
 ```
-$ qr_scan_reporter.py
+$ roslaunch rob1514 qr_sentence.launch
+```
+
+- Option 2: run nodes individually:
+
+1. A node `qr_reporter` will publish scanned-decoded word onto topic `qr_word` every 1 second with all the currently collected words. Message format: `word1, word2, word3, ...`
+
+```
+$ rosrun rob1514 qr_reporter.py
 ```
 
 
 2. A node `speaker` will listen on the topic `sentence` for the correct sentence to speak. This node will use text to speech python package `pyttsx3` and audio card to speak out the sentence. Message format (std_msgs/String): `The meaningful sentence is here`
 
 ```
-$ ./speaker.py
+$ rosrun rob1514 speaker.py
 ```
 
 
