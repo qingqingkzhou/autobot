@@ -1,4 +1,5 @@
 <launch>
-    <node name="speaker" pkg="rob1514" type="speaker.py" args="fake" output="screen" />
-    <node name="qr_reporter" pkg="rob1514" type="qr_reporter.py" args="fake" output="screen" />
+    <node name="speaker" pkg="rob1514" type="speaker.py" args="normal" output="screen" />
+    <node name="qr0_reporter" pkg="rob1514" type="qr0_reporter.py" args="normal" output="screen" />
+    <node name="qr1_reporter" pkg="rob1514" type="qr1_reporter.py" args="normal" output="screen" />
 </launch>
