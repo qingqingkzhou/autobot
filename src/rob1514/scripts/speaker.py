@@ -48,6 +48,7 @@ def callback(data, mode):
         #TODO: tts says the sentence
         engine = pyttsx3.init()
         engine.say(data.data)
+	engine.runAndWait()
 
 
 def listener(mode):
