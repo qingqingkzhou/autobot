@@ -1,0 +1,3 @@
+<launch>
+    <node name="point_feeder" pkg="rob1514" type="point_feeder.py" args="/home/qingqing/autobot/src/rob1514/launch/waypoints.json" output="screen" />
+</launch>
