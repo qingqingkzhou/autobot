@@ -1,4 +1,4 @@
-image: /home/turtlebot/autobot/maps/UTIAS-2.pgm
+image: /home/turtlebot/autobot/maps/UTIAS-8.pgm
 resolution: 0.050000
 origin: [-12.200000, -12.200000, 0.000000]
 negate: 0
