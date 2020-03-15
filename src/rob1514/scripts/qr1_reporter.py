@@ -59,13 +59,15 @@ def scan_qr_code(word_array):
 
 def scan_qr_code_fake(word_array, n):
     
-    decodedObjects = ["qrcode" + str(n)]
+    rospy.sleep(1.)
+    decodedObjects = ["qrcode" + str(n%10)]
         
     if decodedObjects:
         for obj in decodedObjects:
             qr_word = str(obj)
             if qr_word not in word_array:
                 word_array.append(qr_word)
+                rospy.loginfo('QR Code --> %s', ', '.join(word_array))
             
         return word_array
 
@@ -77,9 +79,6 @@ def reporter(mode):
     anonymous = True ensures that your node has a unique name by adding random numbers to the end of NAME
     '''
     pub = rospy.Publisher('qr_word', String, queue_size = 100)
-    rospy.init_node('qr_reporter1', anonymous = True)
-    rospy.loginfo('qr_reporter node running in %s mode', mode)
-    
     #rate = rospy.Rate(100) # 1hz
 
     word_array = []
@@ -87,11 +86,12 @@ def reporter(mode):
     while not rospy.is_shutdown():
         if mode == 'normal':
             if scan_qr_code(word_array):
-                pub.publish(', '.join(word_array))
+                pub.publish(' '.join(word_array))
+                rospy.loginfo('QR Code --> %s', ', '.join(word_array))
         else:
             counter += 1
             if scan_qr_code_fake(word_array, counter):
-                pub.publish(', '.join(word_array))
+                pub.publish(' '.join(word_array))
 
         #rate.sleep()
         
@@ -99,7 +99,11 @@ def reporter(mode):
 if __name__ == '__main__':
     mode = 'normal'
     
-    if len(sys.argv):
+    rospy.init_node('qr_reporter1', anonymous = True)
+    rospy.sleep(3.)
+    rospy.loginfo('qr_reporter node running in %s mode', mode)
+    
+    if len(sys.argv) > 1:
         mode = str(sys.argv[1])
 
     try:
