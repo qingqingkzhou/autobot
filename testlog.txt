@@ -1,0 +1,3597 @@
+turtlebot@turtlebot-Aspire-E3-111:~$ source autobot/devel/setup.bash 
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/535bf0ea-6709-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-5814.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:36867/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [5837]
+process[dock_drive-2]: started with pid [5838]
+[ INFO] [1584310081.658646966]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310081.658805753]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310081.658859697]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310081.658924257]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310081.658974303]: /dock_drive/odom -> /odom
+[ INFO] [1584310081.659027204]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[timer-3]: started with pid [5839]
+process[qr1_reporter-4]: started with pid [5854]
+process[nav_to_point_server-5]: started with pid [5857]
+process[point_feeder-6]: started with pid [5897]
+process[activate_autodock-7]: started with pid [5911]
+[INFO] [1584310082.987534]: time_check: running in normal mode
+[INFO] [1584310083.409058]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+Traceback (most recent call last):
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 49, in <module>
+    load_waypoints(str(sys.argv[1]))
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 24, in load_waypoints
+    data = json.load(json_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 291, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[point_feeder-6] process has died [pid 5897, exit code 1, cmd /home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py /home/turtlebot/autobot/src/rob1514/launch/waypoints.json __name:=point_feeder __log:=/home/turtlebot/.ros/log/535bf0ea-6709-11ea-8a5d-ec0ec46b5409/point_feeder-6.log].
+log file: /home/turtlebot/.ros/log/535bf0ea-6709-11ea-8a5d-ec0ec46b5409/point_feeder-6*.log
+[INFO] [1584310084.388618]: nav_to_point: running in normal mode
+[INFO] [1584310084.394255]: Ready to receive waypoint
+[ INFO] [1584310085.423758030]: rviz version 1.12.17
+[ INFO] [1584310085.423874794]: compiled against Qt version 5.5.1
+[ INFO] [1584310085.423912439]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310086.818307]: activate_autodock: waiting on activation signal
+[ INFO] [1584310087.378711745]: Stereo is NOT SUPPORTED
+[ INFO] [1584310087.378900375]: OpenGl version: 3 (GLSL 1.3).
+[ INFO] [1584310092.234174773]: Creating 1 swatches
+[ INFO] [1584310092.252793681]: Creating 1 swatches
+[ INFO] [1584310092.265576962]: Creating 1 swatches
+^C[nav_to_point_server-5] killing on exit
+[activate_autodock-7] killing on exit
+[dock_drive-2] killing on exit
+[qr1_reporter-4] killing on exit
+[timer-3] killing on exit
+[rviz-1] killing on exit
+[ INFO] [1584310140.370801918]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[INFO] [1584310140.995444]: time_check: Process completed
+[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 5854]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/ec8992d6-6709-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-6797.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+^CTraceback (most recent call last):
+  File "/usr/bin/rosversion", line 11, in <module>
+    load_entry_point('rospkg==1.1.10', 'console_scripts', 'rosversion')()
+  File "/usr/lib/python2.7/dist-packages/rospkg/rosversion.py", line 109, in main
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/bin/roslaunch", line 35, in <module>
+    roslaunch.main()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/__init__.py", line 306, in main
+    p.start()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/parent.py", line 268, in start
+    self._start_infrastructure()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/parent.py", line 217, in _start_infrastructure
+    self._load_config()
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/parent.py", line 132, in _load_config
+    roslaunch_strs=self.roslaunch_strs, verbose=self.verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/config.py", line 445, in load_config_default
+    load_roscore(loader, config, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/config.py", line 94, in load_roscore
+    loader.load(f_roscore, config, core=True, verbose=verbose)    
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 749, in load
+    self._load_launch(launch, ros_config, is_core=core, filename=filename, argv=argv, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 721, in _load_launch
+    self._recurse_load(ros_config, launch.childNodes, self.root_context, None, is_core, verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 655, in _recurse_load
+    default_machine, is_core, verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 665, in _recurse_load
+    self._param_tag(tag, context, ros_config, verbose=verbose)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 95, in call
+    return f(*args, **kwds)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/xmlloader.py", line 265, in _param_tag
+    value = self.param_value(verbose, name, ptype, *vals)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/roslaunch/loader.py", line 492, in param_value
+    c_value = p.communicate()[0]
+  File "/usr/lib/python2.7/subprocess.py", line 792, in communicate
+    stdout = _eintr_retry_call(self.stdout.read)
+  File "/usr/lib/python2.7/subprocess.py", line 476, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+    path = mm.get_path(args.package)
+  File "/usr/lib/python2.7/dist-packages/rospkg/rospack.py", line 201, in get_path
+    self._update_location_cache()
+  File "/usr/lib/python2.7/dist-packages/rospkg/rospack.py", line 184, in _update_location_cache
+    list_by_path(self._manifest_name, path, cache)
+  File "/usr/lib/python2.7/dist-packages/rospkg/rospack.py", line 67, in list_by_path
+    root = ElementTree(None, os.path.join(d, PACKAGE_FILE))
+  File "/usr/lib/python2.7/xml/etree/ElementTree.py", line 611, in __init__
+    self.parse(file)
+  File "<string>", line 26, in parse
+KeyboardInterrupt
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/eef3156a-6709-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-8367.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:43955/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [8975]
+process[dock_drive-2]: started with pid [8976]
+process[timer-3]: started with pid [8977]
+[ INFO] [1584310317.190382470]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310317.190574603]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310317.190629265]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310317.190673345]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310317.190714689]: /dock_drive/odom -> /odom
+[ INFO] [1584310317.190760029]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[qr1_reporter-4]: started with pid [8989]
+process[nav_to_point_server-5]: started with pid [8994]
+process[point_feeder-6]: started with pid [9007]
+process[activate_autodock-7]: started with pid [9015]
+[ INFO] [1584310318.226450079]: rviz version 1.12.17
+[ INFO] [1584310318.227741513]: compiled against Qt version 5.5.1
+[ INFO] [1584310318.227988417]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310318.807663]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[INFO] [1584310318.812972]: nav_to_point: running in normal mode
+Traceback (most recent call last):
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 49, in <module>
+    load_waypoints(str(sys.argv[1]))
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 24, in load_waypoints
+    data = json.load(json_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 291, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[INFO] [1584310318.853607]: Ready to receive waypoint
+[INFO] [1584310318.870552]: time_check: running in normal mode
+[ INFO] [1584310319.158662310]: Stereo is NOT SUPPORTED
+[ INFO] [1584310319.158900911]: OpenGl version: 3 (GLSL 1.3).
+[point_feeder-6] process has died [pid 9007, exit code 1, cmd /home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py /home/turtlebot/autobot/src/rob1514/launch/waypoints.json __name:=point_feeder __log:=/home/turtlebot/.ros/log/eef3156a-6709-11ea-8a5d-ec0ec46b5409/point_feeder-6.log].
+log file: /home/turtlebot/.ros/log/eef3156a-6709-11ea-8a5d-ec0ec46b5409/point_feeder-6*.log
+[INFO] [1584310320.329931]: activate_autodock: waiting on activation signal
+[ INFO] [1584310321.745122395]: Creating 1 swatches
+[ INFO] [1584310321.888087802]: Creating 1 swatches
+[ INFO] [1584310321.912559442]: Creating 1 swatches
+[INFO] [1584310340.102910]: time_check: received QR words-->[0] 
+[INFO] [1584310341.942647]: time_check: received QR words-->[0] 
+^C[nav_to_point_server-5] killing on exit
+[qr1_reporter-4] killing on exit
+[activate_autodock-7] killing on exit
+[timer-3] killing on exit
+[dock_drive-2] killing on exit
+[ INFO] [1584310372.414996706]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[rviz-1] killing on exit
+[ INFO] [1584310372.469955193]: waitForService: Service [/mobile_base_nodelet_manager/unload_nodelet] has not been advertised, waiting...
+[ WARN] [1584310372.470173443]: Couldn't find service mobile_base_nodelet_manager/unload_nodelet, perhaps the manager is already shut down
+[INFO] [1584310373.037303]: time_check: Process completed
+[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 8989]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/ca01f108-670a-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-10764.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:39451/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [10781]
+process[dock_drive-2]: started with pid [10782]
+process[timer-3]: started with pid [10783]
+process[qr1_reporter-4]: started with pid [10788]
+[ INFO] [1584310677.464819763]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310677.464996220]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310677.465044658]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310677.465087683]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310677.465127660]: /dock_drive/odom -> /odom
+[ INFO] [1584310677.465167456]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[nav_to_point_server-5]: started with pid [10796]
+process[point_feeder-6]: started with pid [10801]
+process[activate_autodock-7]: started with pid [10812]
+[ INFO] [1584310678.421987604]: rviz version 1.12.17
+[ INFO] [1584310678.425832452]: compiled against Qt version 5.5.1
+[ INFO] [1584310678.426895790]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310679.120872]: time_check: running in normal mode
+[INFO] [1584310679.205413]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[INFO] [1584310679.223356]: nav_to_point: running in normal mode
+[INFO] [1584310679.234904]: Ready to receive waypoint
+[ INFO] [1584310679.246680715]: Stereo is NOT SUPPORTED
+[ INFO] [1584310679.246921499]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584310679.552105]: Going to (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584310679.644197]: Wait for the action server to come up
+[INFO] [1584310680.343269]: activate_autodock: waiting on activation signal
+[ INFO] [1584310681.970872436]: Creating 1 swatches
+[ INFO] [1584310684.168217760]: Creating 1 swatches
+[ INFO] [1584310684.840352859]: Creating 1 swatches
+^C[activate_autodock-7] killing on exit
+[point_feeder-6] killing on exit
+[nav_to_point_server-5] killing on exit
+[INFO] [1584310690.491388]: Stop
+[qr1_reporter-4] killing on exit
+[timer-3] killing on exit
+[dock_drive-2] killing on exit
+[ INFO] [1584310690.528139335]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[rviz-1] killing on exit
+[INFO] [1584310690.633954]: node shutdown
+[ERROR] [1584310690.664237]: Received comm state PREEMPTING when in simple state DONE with SimpleActionClient in NS /move_base
+[INFO] [1584310690.680519]: time_check: Process completed
+[qr1_reporter-4] escalating to SIGTERM
+^C^C^C^C[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 10788]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/ff1d5e7c-670a-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-14026.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:45837/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [14556]
+process[dock_drive-2]: started with pid [14563]
+process[timer-3]: started with pid [14569]
+process[qr1_reporter-4]: started with pid [14570]
+process[nav_to_point_server-5]: started with pid [14584]
+[ INFO] [1584310771.143342941]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310771.143507957]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310771.143561261]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310771.143609581]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310771.143669899]: /dock_drive/odom -> /odom
+[ INFO] [1584310771.143736704]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[point_feeder-6]: started with pid [14597]
+process[activate_autodock-7]: started with pid [14607]
+[ INFO] [1584310772.136203084]: rviz version 1.12.17
+[ INFO] [1584310772.144956272]: compiled against Qt version 5.5.1
+[ INFO] [1584310772.145272156]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310772.899462]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[ INFO] [1584310773.057192044]: Stereo is NOT SUPPORTED
+[ INFO] [1584310773.057427660]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584310773.113003]: time_check: running in normal mode
+[INFO] [1584310773.203064]: nav_to_point: running in normal mode
+[INFO] [1584310773.207996]: Ready to receive waypoint
+[INFO] [1584310773.273623]: Going to (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584310773.357429]: Wait for the action server to come up
+[INFO] [1584310774.596248]: activate_autodock: waiting on activation signal
+[ INFO] [1584310776.004516674]: Creating 1 swatches
+[ INFO] [1584310776.020878070]: Creating 1 swatches
+[ INFO] [1584310776.024012773]: Creating 1 swatches
+^C[activate_autodock-7] killing on exit
+[point_feeder-6] killing on exit
+[nav_to_point_server-5] killing on exit
+[INFO] [1584310779.868858]: Stop
+[qr1_reporter-4] killing on exit
+[timer-3] killing on exit
+[dock_drive-2] killing on exit
+[ INFO] [1584310779.902388988]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[rviz-1] killing on exit
+[INFO] [1584310780.026614]: time_check: Process completed
+[ERROR] [1584310780.097400]: Received comm state PREEMPTING when in simple state DONE with SimpleActionClient in NS /move_base
+[INFO] [1584310780.493962]: node shutdown
+^C^C^C[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 14570]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/2842227e-670b-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-17043.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:38139/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [17497]
+process[dock_drive-2]: started with pid [17502]
+process[timer-3]: started with pid [17512]
+process[qr1_reporter-4]: started with pid [17520]
+[ INFO] [1584310839.874576030]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310839.874750139]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310839.874804127]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310839.874851810]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310839.874897439]: /dock_drive/odom -> /odom
+[ INFO] [1584310839.874954755]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[nav_to_point_server-5]: started with pid [17531]
+process[point_feeder-6]: started with pid [17541]
+process[activate_autodock-7]: started with pid [17544]
+[ INFO] [1584310840.964883710]: rviz version 1.12.17
+[ INFO] [1584310840.965013510]: compiled against Qt version 5.5.1
+[ INFO] [1584310840.965058395]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310841.422183]: time_check: running in normal mode
+[INFO] [1584310841.839535]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+Traceback (most recent call last):
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 49, in <module>
+    load_waypoints(str(sys.argv[1]))
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 24, in load_waypoints
+    data = json.load(json_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 291, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[ INFO] [1584310841.921987720]: Stereo is NOT SUPPORTED
+[ INFO] [1584310841.922222195]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584310841.939820]: nav_to_point: running in normal mode
+[INFO] [1584310841.949666]: Ready to receive waypoint
+[point_feeder-6] process has died [pid 17541, exit code 1, cmd /home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py /home/turtlebot/autobot/src/rob1514/launch/waypoints.json __name:=point_feeder __log:=/home/turtlebot/.ros/log/2842227e-670b-11ea-8a5d-ec0ec46b5409/point_feeder-6.log].
+log file: /home/turtlebot/.ros/log/2842227e-670b-11ea-8a5d-ec0ec46b5409/point_feeder-6*.log
+[INFO] [1584310843.162802]: activate_autodock: waiting on activation signal
+[ INFO] [1584310844.936474621]: Creating 1 swatches
+[ INFO] [1584310844.941716351]: Creating 1 swatches
+[ INFO] [1584310845.088934151]: Creating 1 swatches
+^C[nav_to_point_server-5] killing on exit
+[activate_autodock-7] killing on exit
+[timer-3] killing on exit
+[qr1_reporter-4] killing on exit
+[dock_drive-2] killing on exit
+[ INFO] [1584310850.251026692]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[rviz-1] killing on exit
+[INFO] [1584310850.894487]: time_check: Process completed
+[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 17520]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/4f61ff46-670b-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-19927.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:46309/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [19944]
+process[dock_drive-2]: started with pid [19945]
+process[timer-3]: started with pid [19946]
+process[qr1_reporter-4]: started with pid [19952]
+[ INFO] [1584310902.422950237]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310902.423134531]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310902.423190742]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310902.423241776]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310902.423298767]: /dock_drive/odom -> /odom
+[ INFO] [1584310902.423358917]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[nav_to_point_server-5]: started with pid [19960]
+process[point_feeder-6]: started with pid [19968]
+process[activate_autodock-7]: started with pid [19983]
+[ INFO] [1584310903.388974714]: rviz version 1.12.17
+[ INFO] [1584310903.400907651]: compiled against Qt version 5.5.1
+[ INFO] [1584310903.401324462]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310904.095387]: time_check: running in normal mode
+[INFO] [1584310904.148664]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[INFO] [1584310904.210324]: nav_to_point: running in normal mode
+[INFO] [1584310904.221270]: Ready to receive waypoint
+[ INFO] [1584310904.262211241]: Stereo is NOT SUPPORTED
+[ INFO] [1584310904.262550991]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584310904.522615]: Going to (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584310904.609517]: Wait for the action server to come up
+[INFO] [1584310905.365229]: activate_autodock: waiting on activation signal
+[ INFO] [1584310907.306490043]: Creating 1 swatches
+[ INFO] [1584310908.380119367]: Creating 1 swatches
+[ INFO] [1584310908.991925480]: Creating 1 swatches
+^C[activate_autodock-7] killing on exit
+[point_feeder-6] killing on exit
+[nav_to_point_server-5] killing on exit
+[INFO] [1584310916.352535]: Stop
+[qr1_reporter-4] killing on exit
+[timer-3] killing on exit
+[dock_drive-2] killing on exit
+[rviz-1] killing on exit
+[ INFO] [1584310916.420760771]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[ERROR] [1584310916.478249]: Received comm state PREEMPTING when in simple state DONE with SimpleActionClient in NS /move_base
+[INFO] [1584310916.973310]: node shutdown
+[INFO] [1584310917.013578]: time_check: Process completed
+^C^C^C^C^C[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 19952]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/818b580a-670b-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-22905.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:34423/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [22922]
+process[dock_drive-2]: started with pid [22923]
+process[timer-3]: started with pid [22924]
+process[qr1_reporter-4]: started with pid [22926]
+[ INFO] [1584310987.351786363]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584310987.352189856]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584310987.352603387]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584310987.353139369]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584310987.353430124]: /dock_drive/odom -> /odom
+[ INFO] [1584310987.353730315]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[nav_to_point_server-5]: started with pid [22939]
+process[point_feeder-6]: started with pid [22945]
+process[activate_autodock-7]: started with pid [22955]
+[ INFO] [1584310988.251065068]: rviz version 1.12.17
+[ INFO] [1584310988.253447121]: compiled against Qt version 5.5.1
+[ INFO] [1584310988.253492072]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584310988.916361]: nav_to_point: running in normal mode
+[INFO] [1584310988.922408]: Ready to receive waypoint
+[ INFO] [1584310989.144321065]: Stereo is NOT SUPPORTED
+[ INFO] [1584310989.144542006]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584310989.146692]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+Traceback (most recent call last):
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 49, in <module>
+    load_waypoints(str(sys.argv[1]))
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 24, in load_waypoints
+    data = json.load(json_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 291, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[INFO] [1584310989.197034]: time_check: running in normal mode
+[point_feeder-6] process has died [pid 22945, exit code 1, cmd /home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py /home/turtlebot/autobot/src/rob1514/launch/waypoints.json __name:=point_feeder __log:=/home/turtlebot/.ros/log/818b580a-670b-11ea-8a5d-ec0ec46b5409/point_feeder-6.log].
+log file: /home/turtlebot/.ros/log/818b580a-670b-11ea-8a5d-ec0ec46b5409/point_feeder-6*.log
+[INFO] [1584310990.308295]: activate_autodock: waiting on activation signal
+^C[activate_autodock-7] killing on exit
+[qr1_reporter-4] killing on exit
+[nav_to_point_server-5] killing on exit
+[timer-3] killing on exit
+[dock_drive-2] killing on exit
+[ INFO] [1584310991.849419602]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[rviz-1] killing on exit
+[INFO] [1584310992.534552]: time_check: Process completed
+^C^C^C^C^C^C^C^C^C^C^C^C[rviz-1] escalating to SIGTERM
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/ad8c3096-670b-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-25745.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:40137/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [25762]
+process[dock_drive-2]: started with pid [25763]
+process[timer-3]: started with pid [25764]
+[ INFO] [1584311060.008402869]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584311060.008589664]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584311060.008646609]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584311060.008734933]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584311060.009000120]: /dock_drive/odom -> /odom
+[ INFO] [1584311060.009050148]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[qr1_reporter-4]: started with pid [25772]
+process[nav_to_point_server-5]: started with pid [25783]
+process[point_feeder-6]: started with pid [25800]
+process[activate_autodock-7]: started with pid [25808]
+[ INFO] [1584311060.953563231]: rviz version 1.12.17
+[ INFO] [1584311060.954633179]: compiled against Qt version 5.5.1
+[ INFO] [1584311060.954678103]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584311061.458680]: time_check: running in normal mode
+[INFO] [1584311061.715743]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+Traceback (most recent call last):
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 49, in <module>
+    load_waypoints(str(sys.argv[1]))
+  File "/home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py", line 24, in load_waypoints
+    data = json.load(json_file)
+  File "/usr/lib/python2.7/json/__init__.py", line 291, in load
+    **kw)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[INFO] [1584311061.757551]: nav_to_point: running in normal mode
+[ INFO] [1584311061.760285166]: Stereo is NOT SUPPORTED
+[ INFO] [1584311061.760945055]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584311061.775387]: Ready to receive waypoint
+[point_feeder-6] process has died [pid 25800, exit code 1, cmd /home/turtlebot/autobot/src/rob1514/scripts/point_feeder.py /home/turtlebot/autobot/src/rob1514/launch/waypoints.json __name:=point_feeder __log:=/home/turtlebot/.ros/log/ad8c3096-670b-11ea-8a5d-ec0ec46b5409/point_feeder-6.log].
+log file: /home/turtlebot/.ros/log/ad8c3096-670b-11ea-8a5d-ec0ec46b5409/point_feeder-6*.log
+[INFO] [1584311062.907064]: activate_autodock: waiting on activation signal
+^C[activate_autodock-7] killing on exit
+[nav_to_point_server-5] killing on exit
+[qr1_reporter-4] killing on exit
+[timer-3] killing on exit
+[rviz-1] killing on exit
+[dock_drive-2] killing on exit
+[ INFO] [1584311064.230711720]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[INFO] [1584311064.835202]: time_check: Process completed
+^C^C^C^C^C[rviz-1] escalating to SIGTERM
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/d99c544a-670b-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-29338.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:39259/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [29686]
+process[dock_drive-2]: started with pid [29687]
+process[timer-3]: started with pid [29688]
+process[qr1_reporter-4]: started with pid [29689]
+[ INFO] [1584311141.027355442]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584311141.027524671]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584311141.027572647]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584311141.027616035]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584311141.027658667]: /dock_drive/odom -> /odom
+[ INFO] [1584311141.027711290]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[nav_to_point_server-5]: started with pid [29696]
+process[point_feeder-6]: started with pid [29703]
+process[activate_autodock-7]: started with pid [29711]
+[ INFO] [1584311141.914073349]: rviz version 1.12.17
+[ INFO] [1584311141.914209506]: compiled against Qt version 5.5.1
+[ INFO] [1584311141.914247202]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584311142.686483]: time_check: running in normal mode
+[ INFO] [1584311142.746416094]: Stereo is NOT SUPPORTED
+[ INFO] [1584311142.746984259]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584311142.801220]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[INFO] [1584311142.921905]: nav_to_point: running in normal mode
+[INFO] [1584311142.928498]: Ready to receive waypoint
+[INFO] [1584311143.125596]: Going to (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311143.186462]: Wait for the action server to come up
+[INFO] [1584311144.313590]: activate_autodock: waiting on activation signal
+[ INFO] [1584311145.782677887]: Creating 1 swatches
+[ INFO] [1584311145.797724561]: Creating 1 swatches
+[ INFO] [1584311145.809498770]: Creating 1 swatches
+[ WARN] [1584311147.494205410]: MessageFilter [target=map ]: Discarding message from [/move_base] due to empty frame_id.  This message will only print once.
+[ WARN] [1584311147.494466604]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+^C[activate_autodock-7] killing on exit
+[point_feeder-6] killing on exit
+[nav_to_point_server-5] killing on exit
+[qr1_reporter-4] killing on exit
+[timer-3] killing on exit
+[INFO] [1584311151.851770]: Stop
+[dock_drive-2] killing on exit
+[ INFO] [1584311151.863965154]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+[rviz-1] killing on exit
+^C[INFO] [1584311151.991078]: node shutdown
+[ERROR] [1584311152.070390]: Received comm state PREEMPTING when in simple state DONE with SimpleActionClient in NS /move_base
+[INFO] [1584311152.498696]: time_check: Process completed
+^C^C^C[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 29689]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/091536ec-670c-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-31651.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:41831/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [31681]
+process[dock_drive-2]: started with pid [31682]
+process[timer-3]: started with pid [31683]
+[ INFO] [1584311212.029206871]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584311212.029402412]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584311212.029460860]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584311212.029509280]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584311212.029558336]: /dock_drive/odom -> /odom
+[ INFO] [1584311212.029623064]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[qr1_reporter-4]: started with pid [31692]
+process[nav_to_point_server-5]: started with pid [31696]
+process[point_feeder-6]: started with pid [31698]
+process[activate_autodock-7]: started with pid [31710]
+[ INFO] [1584311212.915381311]: rviz version 1.12.17
+[ INFO] [1584311212.915516195]: compiled against Qt version 5.5.1
+[ INFO] [1584311212.915560676]: compiled against OGRE version 1.9.0 (Ghadamon)
+[INFO] [1584311213.331185]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[INFO] [1584311213.509176]: time_check: running in normal mode
+[INFO] [1584311213.715763]: nav_to_point: running in normal mode
+[INFO] [1584311213.721835]: Ready to receive waypoint
+[ INFO] [1584311213.821829768]: Stereo is NOT SUPPORTED
+[ INFO] [1584311213.822064662]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584311213.974371]: Going to (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311214.059210]: Wait for the action server to come up
+[INFO] [1584311214.912861]: activate_autodock: waiting on activation signal
+[ INFO] [1584311217.096612235]: Creating 1 swatches
+[ INFO] [1584311218.645772972]: Creating 1 swatches
+[ INFO] [1584311219.383641001]: Creating 1 swatches
+^C[activate_autodock-7] killing on exit
+[point_feeder-6] killing on exit
+[nav_to_point_server-5] killing on exit
+[qr1_reporter-4] killing on exit
+[INFO] [1584311246.689817]: Stop
+[timer-3] killing on exit
+[dock_drive-2] killing on exit
+[rviz-1] killing on exit
+[ INFO] [1584311246.732082256]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+^C^C^C[INFO] [1584311247.305019]: node shutdown
+[INFO] [1584311247.374002]: time_check: Process completed
+^C^C[qr1_reporter-4] escalating to SIGTERM
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[qr1_reporter-4, pid 31692]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ roslaunch rob1514 autobot.launch 
+... logging to /home/turtlebot/.ros/log/67eba552-670c-11ea-8a5d-ec0ec46b5409/roslaunch-turtlebot-Aspire-E3-111-3757.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://192.168.43.51:39847/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /dock_drive/min_abs_v: 0.01
+ * /dock_drive/min_abs_w: 0.1
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.14
+
+NODES
+  /
+    activate_autodock (rob1514/activate_autodock.py)
+    dock_drive (nodelet/nodelet)
+    nav_to_point_server (rob1514/navigate_to_point.py)
+    point_feeder (rob1514/point_feeder.py)
+    qr1_reporter (rob1514/qr1_reporter.py)
+    rviz (rviz/rviz)
+    timer (rob1514/timer.py)
+
+ROS_MASTER_URI=http://localhost:11311
+
+process[rviz-1]: started with pid [3780]
+process[dock_drive-2]: started with pid [3781]
+process[timer-3]: started with pid [3782]
+process[qr1_reporter-4]: started with pid [3788]
+[ INFO] [1584311393.110942967]: Loading nodelet /dock_drive of type kobuki_auto_docking/AutoDockingNodelet to manager mobile_base_nodelet_manager with the following remappings:
+[ INFO] [1584311393.111103502]: /dock_drive/core -> /mobile_base/sensors/core
+[ INFO] [1584311393.111156581]: /dock_drive/dock_ir -> /mobile_base/sensors/dock_ir
+[ INFO] [1584311393.111204965]: /dock_drive/motor_power -> /mobile_base/commands/motor_power
+[ INFO] [1584311393.111249723]: /dock_drive/odom -> /odom
+[ INFO] [1584311393.113777830]: /dock_drive/velocity -> /mobile_base/commands/velocity
+process[nav_to_point_server-5]: started with pid [3795]
+process[point_feeder-6]: started with pid [3799]
+process[activate_autodock-7]: started with pid [3805]
+[ INFO] [1584311393.988041960]: rviz version 1.12.17
+[ INFO] [1584311393.988204405]: compiled against Qt version 5.5.1
+[ INFO] [1584311393.988260319]: compiled against OGRE version 1.9.0 (Ghadamon)
+[ INFO] [1584311394.768969553]: Stereo is NOT SUPPORTED
+[ INFO] [1584311394.775205299]: OpenGl version: 3 (GLSL 1.3).
+[INFO] [1584311394.864629]: Load waypoints from /home/turtlebot/autobot/src/rob1514/launch/waypoints.json
+[INFO] [1584311394.904358]: nav_to_point: running in normal mode
+[INFO] [1584311394.913951]: Ready to receive waypoint
+[INFO] [1584311394.992252]: time_check: running in normal mode
+[INFO] [1584311395.192690]: Going to (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311395.252987]: Wait for the action server to come up
+[INFO] [1584311396.308491]: activate_autodock: waiting on activation signal
+[ INFO] [1584311397.803043176]: Creating 1 swatches
+[ INFO] [1584311397.817547105]: Creating 1 swatches
+[ INFO] [1584311397.833184929]: Creating 1 swatches
+[INFO] [1584311413.019508]: Goto [1] (7.43, -0.934) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311413.021601]: time_check: nav_result = id-1-Succeed
+[INFO] [1584311413.021985]: activate_autodock: nav_result = id-1-Succeed
+[INFO] [1584311413.022697]: time_check: Moved to waypoint 1
+[INFO] [1584311413.036481]: Going to (17.5, -0.662) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311413.057591]: Wait for the action server to come up
+[INFO] [1584311436.880745]: Goto [2] (17.5, -0.662) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311436.883185]: time_check: nav_result = id-2-Succeed
+[INFO] [1584311436.884124]: time_check: Moved to waypoint 2
+[INFO] [1584311436.885606]: activate_autodock: nav_result = id-2-Succeed
+[INFO] [1584311436.897691]: Going to (22.2, -0.429) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311436.908522]: Wait for the action server to come up
+[INFO] [1584311449.547576]: Goto [3] (22.2, -0.429) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311449.550650]: time_check: nav_result = id-3-Succeed
+[INFO] [1584311449.551488]: time_check: Moved to waypoint 3
+[INFO] [1584311449.552626]: activate_autodock: nav_result = id-3-Succeed
+[INFO] [1584311449.568890]: Going to (24.6, -0.17) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311449.582302]: Wait for the action server to come up
+[INFO] [1584311456.821091]: Goto [4] (24.6, -0.17) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311456.823532]: time_check: nav_result = id-4-Succeed
+[INFO] [1584311456.824249]: time_check: Moved to waypoint 4
+[INFO] [1584311456.827125]: activate_autodock: nav_result = id-4-Succeed
+[INFO] [1584311456.837611]: Going to (29.3, 0.336) (0.0, 0.0, -1.55, 1.0) pose
+[INFO] [1584311456.851874]: Wait for the action server to come up
+[INFO] [1584311473.464617]: Goto [5] (29.3, 0.336) (0.0, 0.0, -1.55, 1.0) => Succeed
+[INFO] [1584311473.467379]: activate_autodock: nav_result = id-5-Succeed
+[INFO] [1584311473.468588]: time_check: nav_result = id-5-Succeed
+[INFO] [1584311473.469388]: time_check: Moved to waypoint 5
+[INFO] [1584311473.478743]: Going to (29.1, -3.32) (0.0, 0.0, -1.55, 1.0) pose
+[INFO] [1584311473.491676]: Wait for the action server to come up
+[INFO] [1584311484.319192]: Goto [6] (29.1, -3.32) (0.0, 0.0, -1.55, 1.0) => Succeed
+[INFO] [1584311484.320646]: activate_autodock: nav_result = id-6-Succeed
+[INFO] [1584311484.322965]: time_check: nav_result = id-6-Succeed
+[INFO] [1584311484.324035]: time_check: Moved to waypoint 6
+[INFO] [1584311484.341033]: Going to (29.1, -6.3) (0.0, 0.0, -1.55, 1.0) pose
+[INFO] [1584311484.352928]: Wait for the action server to come up
+[INFO] [1584311495.383735]: Goto [7] (29.1, -6.3) (0.0, 0.0, -1.55, 1.0) => Succeed
+[INFO] [1584311495.388139]: time_check: nav_result = id-7-Succeed
+[INFO] [1584311495.388951]: time_check: Moved to waypoint 7
+[INFO] [1584311495.390030]: activate_autodock: nav_result = id-7-Succeed
+[INFO] [1584311495.400301]: Going to (28.9, -6.77) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311495.411143]: Wait for the action server to come up
+[INFO] [1584311501.244046]: Goto [8] (28.9, -6.77) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311501.246502]: time_check: nav_result = id-8-Succeed
+[INFO] [1584311501.247307]: time_check: Moved to waypoint 8
+[INFO] [1584311501.248710]: activate_autodock: nav_result = id-8-Succeed
+[INFO] [1584311501.255328]: Going to (29.6, -6.97) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311501.263811]: Wait for the action server to come up
+[INFO] [1584311508.500797]: Goto [9] (29.6, -6.97) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311508.502306]: time_check: nav_result = id-9-Succeed
+[INFO] [1584311508.503239]: time_check: Moved to waypoint 9
+[INFO] [1584311508.504780]: activate_autodock: nav_result = id-9-Succeed
+[INFO] [1584311508.512706]: Going to (29.6, -4.17) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311508.526733]: Wait for the action server to come up
+[INFO] [1584311517.354069]: Goto [10] (29.6, -4.17) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311517.355764]: time_check: nav_result = id-10-Succeed
+[INFO] [1584311517.356577]: time_check: Moved to waypoint 10
+[INFO] [1584311517.357630]: activate_autodock: nav_result = id-10-Succeed
+[INFO] [1584311517.368627]: Going to (29.4, 0.554) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311517.380653]: Wait for the action server to come up
+[INFO] [1584311529.988762]: Goto [11] (29.4, 0.554) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311529.991525]: activate_autodock: nav_result = id-11-Succeed
+[INFO] [1584311529.993116]: time_check: nav_result = id-11-Succeed
+[INFO] [1584311529.994124]: time_check: Moved to waypoint 11
+[INFO] [1584311530.007593]: Going to (29.9, 3.06) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311530.018148]: Wait for the action server to come up
+[INFO] [1584311539.232200]: Goto [12] (29.9, 3.06) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311539.234569]: time_check: nav_result = id-12-Succeed
+[INFO] [1584311539.235324]: time_check: Moved to waypoint 12
+[INFO] [1584311539.237956]: activate_autodock: nav_result = id-12-Succeed
+[INFO] [1584311539.250802]: Going to (30.0, 5.96) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311539.262968]: Wait for the action server to come up
+[INFO] [1584311549.471708]: Goto [13] (30.0, 5.96) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311549.473261]: time_check: nav_result = id-13-Succeed
+[INFO] [1584311549.473391]: activate_autodock: nav_result = id-13-Succeed
+[INFO] [1584311549.474117]: time_check: Moved to waypoint 13
+[INFO] [1584311549.488278]: Going to (30.3, 11.0) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311549.498176]: Wait for the action server to come up
+[INFO] [1584311563.908777]: Goto [14] (30.3, 11.0) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311563.910340]: time_check: nav_result = id-14-Succeed
+[INFO] [1584311563.910464]: activate_autodock: nav_result = id-14-Succeed
+[INFO] [1584311563.911347]: time_check: Moved to waypoint 14
+[INFO] [1584311563.924754]: Going to (30.3, 15.6) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311563.942093]: Wait for the action server to come up
+[INFO] [1584311577.177084]: Goto [15] (30.3, 15.6) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311577.179066]: time_check: nav_result = id-15-Succeed
+[INFO] [1584311577.179160]: activate_autodock: nav_result = id-15-Succeed
+[INFO] [1584311577.179870]: time_check: Moved to waypoint 15
+[INFO] [1584311577.191025]: Going to (30.0, 18.4) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311577.202004]: Wait for the action server to come up
+[INFO] [1584311585.617575]: Goto [16] (30.0, 18.4) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311585.620615]: time_check: nav_result = id-16-Succeed
+[INFO] [1584311585.621352]: time_check: Moved to waypoint 16
+[INFO] [1584311585.622353]: activate_autodock: nav_result = id-16-Succeed
+[INFO] [1584311585.628542]: Going to (32.4, 18.0) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311585.638296]: Wait for the action server to come up
+[ WARN] [1584311585.683006934]: MessageFilter [target=map ]: Discarding message from [/move_base] due to empty frame_id.  This message will only print once.
+[ WARN] [1584311585.683299325]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311585.891361606]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311586.084127981]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311586.307050011]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311586.498577506]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311586.689630466]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311586.913946543]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311587.074037610]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311587.297542573]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311587.490832716]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311587.683436068]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311587.883183310]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311588.097635219]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311588.291344148]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311588.487353041]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311588.707893110]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311588.899212319]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311589.091534793]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311589.287370549]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311589.506974291]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311589.698226865]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311589.891165937]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311590.083039758]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311590.307632672]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311590.498782746]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311590.690829403]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311591.076720868]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311591.298004586]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311591.489762166]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311591.713686630]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311591.905234610]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311592.071782834]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311592.293010389]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311592.482568688]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311592.707244500]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311592.900210903]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311593.090597431]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311593.283020873]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311593.475292102]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311593.699093275]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311593.890218048]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311594.082025107]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311594.307816098]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311594.498876446]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311594.690758368]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311594.914847788]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311595.108417710]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311595.297624933]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311595.493091170]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311595.682271825]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311595.907645633]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311604.507824618]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311604.705774005]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311604.897853421]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311605.090236495]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311605.283457719]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311605.486611460]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311605.698084594]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311605.892457270]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311606.088017803]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311606.305703996]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311606.500144749]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311606.690520301]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311606.883527324]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311607.079310045]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311607.298905043]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311607.523067606]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311607.681943844]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311607.875308261]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311608.099576159]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311608.291015568]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311608.483769296]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311608.674174166]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311608.897586955]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311609.092355687]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311609.282699962]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311609.475903146]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311609.889409847]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311610.082757012]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311610.306857170]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311610.489054700]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311610.691311334]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311610.883629335]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311611.105668136]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311611.299680827]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311611.490248108]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311611.687704871]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311611.906758761]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311612.100592762]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311612.290222900]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311612.514995671]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311612.683579365]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311612.898842579]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311613.095455202]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311613.281453376]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311613.506450355]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311613.699053051]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311613.889782025]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311614.082719898]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311614.305243837]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311614.497854726]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311614.690185693]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311623.234881077]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311623.457620656]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311623.650172430]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311623.843248408]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311624.034924223]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311624.258849736]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311624.451172059]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311624.642754878]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311624.836202347]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311625.058859692]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311625.251571920]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311625.443201633]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311625.636330942]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311625.859413815]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311626.050141999]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311626.243035201]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311626.435108399]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311626.657403794]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311626.850653664]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311627.051514482]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311627.237353164]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311627.427719442]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311627.650295490]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311627.842822180]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311628.067348356]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[ WARN] [1584311628.260798341]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[INFO] [1584311628.429768]: Goto [17] (32.4, 18.0) (0.0, 0.0, 1.55, 1.0) => Failed
+[INFO] [1584311628.432799]: time_check: nav_result = id-17-Failed
+[INFO] [1584311628.433779]: time_check: Moved to waypoint 17
+[INFO] [1584311628.435003]: activate_autodock: nav_result = id-17-Failed
+[INFO] [1584311628.450259]: Going to (30.1, 20.1) (0.0, 0.0, 0.0, 1.0) pose
+[ERROR] [1584311628.451369]: Received comm state PREEMPTING when in simple state DONE with SimpleActionClient in NS /move_base
+[INFO] [1584311628.469109]: Wait for the action server to come up
+[INFO] [1584311637.085911]: Goto [18] (30.1, 20.1) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311637.088850]: time_check: nav_result = id-18-Succeed
+[INFO] [1584311637.089744]: time_check: Moved to waypoint 18
+[INFO] [1584311637.090908]: activate_autodock: nav_result = id-18-Succeed
+[INFO] [1584311637.105119]: Going to (34.7, 19.0) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311637.119684]: Wait for the action server to come up
+[INFO] [1584311648.946984]: Goto [19] (34.7, 19.0) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311648.949851]: time_check: nav_result = id-19-Succeed
+[INFO] [1584311648.950192]: activate_autodock: nav_result = id-19-Succeed
+[INFO] [1584311648.950862]: time_check: Moved to waypoint 19
+[INFO] [1584311648.961402]: Going to (38.5, 18.9) (0.0, 0.0, 0.75, 1.0) pose
+[INFO] [1584311648.975955]: Wait for the action server to come up
+[INFO] [1584311662.216789]: Goto [20] (38.5, 18.9) (0.0, 0.0, 0.75, 1.0) => Succeed
+[INFO] [1584311662.220611]: time_check: nav_result = id-20-Succeed
+[INFO] [1584311662.221048]: activate_autodock: nav_result = id-20-Succeed
+[INFO] [1584311662.221620]: time_check: Moved to waypoint 20
+[INFO] [1584311662.231151]: Going to (39.7, 20.7) (0.0, 0.0, 0.75, 1.0) pose
+[INFO] [1584311662.243532]: Wait for the action server to come up
+[INFO] [1584311670.462251]: Goto [21] (39.7, 20.7) (0.0, 0.0, 0.75, 1.0) => Succeed
+[INFO] [1584311670.464978]: activate_autodock: nav_result = id-21-Succeed
+[INFO] [1584311670.465378]: time_check: nav_result = id-21-Succeed
+[INFO] [1584311670.466198]: time_check: Moved to waypoint 21
+[INFO] [1584311670.475766]: Going to (42.7, 21.1) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311670.492172]: Wait for the action server to come up
+[INFO] [1584311682.728397]: Goto [22] (42.7, 21.1) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311682.731238]: activate_autodock: nav_result = id-22-Succeed
+[INFO] [1584311682.732386]: time_check: nav_result = id-22-Succeed
+[INFO] [1584311682.733441]: time_check: Moved to waypoint 22
+[INFO] [1584311682.743862]: Going to (45.8, 21.0) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311682.764210]: Wait for the action server to come up
+[INFO] [1584311692.388233]: Goto [23] (45.8, 21.0) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311692.389881]: time_check: nav_result = id-23-Succeed
+[INFO] [1584311692.390667]: activate_autodock: nav_result = id-23-Succeed
+[INFO] [1584311692.390862]: time_check: Moved to waypoint 23
+[INFO] [1584311692.406939]: Going to (47.6, 20.6) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311692.419395]: Wait for the action server to come up
+[INFO] [1584311699.641196]: Goto [24] (47.6, 20.6) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311699.642931]: time_check: nav_result = id-24-Succeed
+[INFO] [1584311699.644026]: activate_autodock: nav_result = id-24-Succeed
+[INFO] [1584311699.648252]: time_check: Moved to waypoint 24
+[INFO] [1584311699.658120]: Going to (52.7, 20.0) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311699.670325]: Wait for the action server to come up
+[INFO] [1584311716.490220]: Goto [25] (52.7, 20.0) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311716.492978]: time_check: nav_result = id-25-Succeed
+[INFO] [1584311716.493648]: activate_autodock: nav_result = id-25-Succeed
+[INFO] [1584311716.496411]: time_check: Moved to waypoint 25
+[INFO] [1584311716.505374]: Going to (47.6, 20.6) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311716.519214]: Wait for the action server to come up
+[INFO] [1584311730.737318]: Goto [26] (47.6, 20.6) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311730.738855]: time_check: nav_result = id-26-Succeed
+[INFO] [1584311730.739703]: time_check: Moved to waypoint 26
+[INFO] [1584311730.741372]: activate_autodock: nav_result = id-26-Succeed
+[INFO] [1584311730.757688]: Going to (45.8, 21.0) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311730.768742]: Wait for the action server to come up
+[INFO] [1584311737.006121]: Goto [27] (45.8, 21.0) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311737.007738]: time_check: nav_result = id-27-Succeed
+[INFO] [1584311737.007869]: activate_autodock: nav_result = id-27-Succeed
+[INFO] [1584311737.008627]: time_check: Moved to waypoint 27
+[INFO] [1584311737.023768]: Going to (42.7, 21.1) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311737.039344]: Wait for the action server to come up
+[INFO] [1584311747.461082]: Goto [28] (42.7, 21.1) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311747.465771]: activate_autodock: nav_result = id-28-Succeed
+[INFO] [1584311747.466183]: time_check: nav_result = id-28-Succeed
+[INFO] [1584311747.467020]: time_check: Moved to waypoint 28
+[INFO] [1584311747.479862]: Going to (40.1, 21.1) (0.0, 0.0, -0.75, 1.0) pose
+[INFO] [1584311747.497846]: Wait for the action server to come up
+[INFO] [1584311757.324907]: Goto [29] (40.1, 21.1) (0.0, 0.0, -0.75, 1.0) => Succeed
+[INFO] [1584311757.326765]: time_check: nav_result = id-29-Succeed
+[INFO] [1584311757.328148]: time_check: Moved to waypoint 29
+[INFO] [1584311757.328441]: activate_autodock: nav_result = id-29-Succeed
+[INFO] [1584311757.343629]: Going to (38.5, 18.9) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311757.352975]: Wait for the action server to come up
+[INFO] [1584311771.771446]: Goto [30] (38.5, 18.9) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311771.773400]: time_check: nav_result = id-30-Succeed
+[INFO] [1584311771.773910]: activate_autodock: nav_result = id-30-Succeed
+[INFO] [1584311771.774440]: time_check: Moved to waypoint 30
+[INFO] [1584311771.790733]: Going to (35.5, 19.8) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311771.803437]: Wait for the action server to come up
+[INFO] [1584311781.024846]: Goto [31] (35.5, 19.8) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311781.027016]: activate_autodock: nav_result = id-31-Succeed
+[INFO] [1584311781.027056]: time_check: nav_result = id-31-Succeed
+[INFO] [1584311781.027844]: time_check: Moved to waypoint 31
+[INFO] [1584311781.043957]: Going to (33.8, 19.5) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311781.058342]: Wait for the action server to come up
+[INFO] [1584311790.286930]: Goto [32] (33.8, 19.5) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311790.288922]: activate_autodock: nav_result = id-32-Succeed
+[INFO] [1584311790.291772]: time_check: nav_result = id-32-Succeed
+[INFO] [1584311790.292632]: time_check: Moved to waypoint 32
+[INFO] [1584311790.313767]: Going to (30.1, 20.1) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311790.325045]: Wait for the action server to come up
+[INFO] [1584311803.558124]: Goto [33] (30.1, 20.1) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311803.560822]: time_check: nav_result = id-33-Succeed
+[INFO] [1584311803.562204]: time_check: Moved to waypoint 33
+[INFO] [1584311803.563725]: activate_autodock: nav_result = id-33-Succeed
+[INFO] [1584311803.585804]: Going to (30.0, 21.3) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311803.595789]: Wait for the action server to come up
+[INFO] [1584311810.403961]: Goto [34] (30.0, 21.3) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311810.406019]: time_check: nav_result = id-34-Succeed
+[INFO] [1584311810.406920]: time_check: Moved to waypoint 34
+[INFO] [1584311810.406958]: activate_autodock: nav_result = id-34-Succeed
+[INFO] [1584311810.417630]: Going to (30.1, 23.0) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311810.431617]: Wait for the action server to come up
+[INFO] [1584311818.647092]: Goto [35] (30.1, 23.0) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311818.648660]: time_check: nav_result = id-35-Succeed
+[INFO] [1584311818.649521]: time_check: Moved to waypoint 35
+[INFO] [1584311818.649516]: activate_autodock: nav_result = id-35-Succeed
+[INFO] [1584311818.659261]: Going to (30.3, 24.1) (0.0, 0.0, 4.69, 1.0) pose
+[INFO] [1584311818.673375]: Wait for the action server to come up
+[INFO] [1584311826.285792]: Goto [36] (30.3, 24.1) (0.0, 0.0, 4.69, 1.0) => Succeed
+[INFO] [1584311826.288127]: activate_autodock: nav_result = id-36-Succeed
+[INFO] [1584311826.289515]: time_check: nav_result = id-36-Succeed
+[INFO] [1584311826.290638]: time_check: Moved to waypoint 36
+[INFO] [1584311826.302819]: Going to (29.1, 24.1) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311826.322455]: Wait for the action server to come up
+[INFO] [1584311832.334248]: Goto [37] (29.1, 24.1) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311832.336329]: activate_autodock: nav_result = id-37-Succeed
+[INFO] [1584311832.336579]: time_check: nav_result = id-37-Succeed
+[INFO] [1584311832.339262]: time_check: Moved to waypoint 37
+[INFO] [1584311832.351913]: Going to (29.5, 23.0) (0.0, 0.0, 0.0, 1.0) pose
+[INFO] [1584311832.373641]: Wait for the action server to come up
+[INFO] [1584311842.805260]: Goto [38] (29.5, 23.0) (0.0, 0.0, 0.0, 1.0) => Succeed
+[INFO] [1584311842.808073]: time_check: nav_result = id-38-Succeed
+[INFO] [1584311842.809221]: time_check: Moved to waypoint 38
+[INFO] [1584311842.810512]: activate_autodock: nav_result = id-38-Succeed
+[INFO] [1584311842.822989]: Going to (29.0, 21.5) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311842.832934]: Wait for the action server to come up
+[INFO] [1584311853.657842]: Goto [39] (29.0, 21.5) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311853.660405]: time_check: nav_result = id-39-Succeed
+[INFO] [1584311853.661147]: time_check: Moved to waypoint 39
+[INFO] [1584311853.662271]: activate_autodock: nav_result = id-39-Succeed
+[INFO] [1584311853.679843]: Going to (26.8, 20.5) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311853.690957]: Wait for the action server to come up
+[ WARN] [1584311866.774339764]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[INFO] [1584311867.337029]: Goto [40] (26.8, 20.5) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311867.343976]: time_check: nav_result = id-40-Succeed
+[INFO] [1584311867.344754]: time_check: Moved to waypoint 40
+[INFO] [1584311867.345835]: activate_autodock: nav_result = id-40-Succeed
+[INFO] [1584311867.350111]: Going to (29.4, 19.4) (0.0, 0.0, 1.55, 1.0) pose
+[INFO] [1584311867.361481]: Wait for the action server to come up
+[ WARN] [1584311868.403691644]: Invalid argument passed to canTransform argument source_frame in tf2 frame_ids cannot be empty
+[INFO] [1584311882.584780]: Goto [41] (29.4, 19.4) (0.0, 0.0, 1.55, 1.0) => Succeed
+[INFO] [1584311882.587002]: activate_autodock: nav_result = id-41-Succeed
+[INFO] [1584311882.587275]: time_check: nav_result = id-41-Succeed
+[INFO] [1584311882.588052]: time_check: Moved to waypoint 41
+[INFO] [1584311882.608715]: Going to (29.2, 12.0) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311882.621503]: Wait for the action server to come up
+[INFO] [1584311907.246895]: Goto [42] (29.2, 12.0) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311907.250192]: activate_autodock: nav_result = id-42-Succeed
+[INFO] [1584311907.250779]: time_check: nav_result = id-42-Succeed
+[INFO] [1584311907.251742]: time_check: Moved to waypoint 42
+[INFO] [1584311907.264722]: Going to (29.2, 5.15) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311907.277484]: Wait for the action server to come up
+[INFO] [1584311931.285754]: Goto [43] (29.2, 5.15) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311931.290791]: time_check: nav_result = id-43-Succeed
+[INFO] [1584311931.291849]: time_check: Moved to waypoint 43
+[INFO] [1584311931.294098]: activate_autodock: nav_result = id-43-Succeed
+[INFO] [1584311931.306940]: Going to (28.9, 0.655) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311931.319136]: Wait for the action server to come up
+[INFO] [1584311951.337936]: Goto [44] (28.9, 0.655) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311951.340610]: time_check: nav_result = id-44-Succeed
+[INFO] [1584311951.341814]: time_check: Moved to waypoint 44
+[INFO] [1584311951.342254]: activate_autodock: nav_result = id-44-Succeed
+[INFO] [1584311951.357835]: Going to (25.5, 0.3) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311951.373413]: Wait for the action server to come up
+[INFO] [1584311962.592191]: Goto [45] (25.5, 0.3) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311962.593975]: time_check: nav_result = id-45-Succeed
+[INFO] [1584311962.594936]: time_check: Moved to waypoint 45
+[INFO] [1584311962.597847]: activate_autodock: nav_result = id-45-Succeed
+[INFO] [1584311962.606124]: Going to (18.0, 0.0696) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311962.623618]: Wait for the action server to come up
+[INFO] [1584311981.834926]: Goto [46] (18.0, 0.0696) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311981.837472]: activate_autodock: nav_result = id-46-Succeed
+[INFO] [1584311981.839829]: time_check: nav_result = id-46-Succeed
+[INFO] [1584311981.840657]: time_check: Moved to waypoint 46
+[INFO] [1584311981.854245]: Going to (12.1, 0.0053) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311981.866344]: Wait for the action server to come up
+[INFO] [1584311998.489699]: Goto [47] (12.1, 0.0053) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584311998.492691]: time_check: nav_result = id-47-Succeed
+[INFO] [1584311998.493565]: activate_autodock: nav_result = id-47-Succeed
+[INFO] [1584311998.493860]: time_check: Moved to waypoint 47
+[INFO] [1584311998.505625]: Going to (7.3, -0.475) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584311998.516170]: Wait for the action server to come up
+[INFO] [1584312012.554363]: Goto [48] (7.3, -0.475) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584312012.557118]: time_check: nav_result = id-48-Succeed
+[INFO] [1584312012.557914]: time_check: Moved to waypoint 48
+[INFO] [1584312012.560469]: activate_autodock: nav_result = id-48-Succeed
+[INFO] [1584312012.569427]: Going to (2.96, -0.439) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584312012.581770]: Wait for the action server to come up
+[INFO] [1584312024.610309]: Goto [49] (2.96, -0.439) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584312024.615137]: activate_autodock: nav_result = id-49-Succeed
+[INFO] [1584312024.618911]: time_check: nav_result = id-49-Succeed
+[INFO] [1584312024.619992]: time_check: Moved to waypoint 49
+[INFO] [1584312024.631670]: Going to (0.0, 0.0) (0.0, 0.0, 3.14, 1.0) pose
+[INFO] [1584312024.643285]: Wait for the action server to come up
+[INFO] [1584312033.665519]: Goto [50] (0.0, 0.0) (0.0, 0.0, 3.14, 1.0) => Succeed
+[INFO] [1584312033.670622]: time_check: nav_result = id-50-Succeed
+[INFO] [1584312033.671063]: All waypoints have finished --> go to dock
+[INFO] [1584312033.671571]: time_check: Moved to waypoint 50
+[INFO] [1584312033.671892]: activate_autodock: nav_result = id-50-Succeed
+[INFO] [1584312033.674524]: time_check: nav_result = GotoDock
+[INFO] [1584312033.675340]: activate_autodock: nav_result = GotoDock
+[INFO] [1584312033.675504]: time_check: Final stage --> display and speak the sentence
+[INFO] [1584312033.676105]: activate_autodock: start auto docking
+[INFO] [1584312033.676558]: time_check: Say: 
+[ERROR] [1584312033.995147]: bad callback: <function nav_callback at 0x7f213e9c5c08>
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/rospy/topics.py", line 748, in _invoke_callback
+    cb(msg, cb_args)
+  File "/home/turtlebot/autobot/src/rob1514/scripts/timer.py", line 43, in nav_callback
+    speak(g_sentence, mode)
+  File "/home/turtlebot/autobot/src/rob1514/scripts/timer.py", line 17, in speak
+    engine.say(data.data)
+NameError: global name 'data' is not defined
+
+Goal: Sent.
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+[point_feeder-6] process has finished cleanly
+log file: /home/turtlebot/.ros/log/67eba552-670c-11ea-8a5d-ec0ec46b5409/point_feeder-6*.log
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: FIND_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: GET_STREAM]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_FAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: BUMPED]: 
+Feedback: [DockDrive: SCAN]: 
+Feedback: [DockDrive: ALIGNED]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: ALIGNED_NEAR]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Feedback: [DockDrive: DOCKED_IN]: 
+Result - [ActionServer: SUCCEEDED]: Arrived on docking station successfully.
+[activate_autodock-7] process has finished cleanly
+log file: /home/turtlebot/.ros/log/67eba552-670c-11ea-8a5d-ec0ec46b5409/activate_autodock-7*.log
+^[[B^[[B^[[B^[[B^C[nav_to_point_server-5] killing on exit
+[qr1_reporter-4] killing on exit
+[INFO] [1584312354.613800]: Stop
+[dock_drive-2] killing on exit
+[timer-3] killing on exit
+[rviz-1] killing on exit
+[ INFO] [1584312354.668343413]: Unloading nodelet /dock_drive from manager mobile_base_nodelet_manager
+^C[INFO] [1584312354.749932]: time_check: Process completed
+^C^C[INFO] [1584312355.615932]: Stop
+[INFO] [1584312356.617803]: Stop
+[INFO] [1584312357.619816]: Stop
+[INFO] [1584312358.622139]: Stop
+[INFO] [1584312359.624841]: Stop
+[INFO] [1584312360.629129]: Stop
+[INFO] [1584312361.630697]: Stop
+[INFO] [1584312362.633191]: Stop
+[INFO] [1584312363.636143]: Stop
+[INFO] [1584312364.638000]: Stop
+[INFO] [1584312365.639716]: Stop
+[INFO] [1584312366.641080]: Stop
+[INFO] [1584312367.642253]: Stop
+[INFO] [1584312368.644515]: Stop
+[INFO] [1584312369.647161]: Stop
+[nav_to_point_server-5] escalating to SIGTERM
+[INFO] [1584312369.668397]: Stop
+[qr1_reporter-4] escalating to SIGTERM
+^C^C^C^C[INFO] [1584312370.670795]: Stop
+^C^C[nav_to_point_server-5] escalating to SIGKILL
+[qr1_reporter-4] escalating to SIGKILL
+Shutdown errors:
+ * process[nav_to_point_server-5, pid 3795]: required SIGKILL. May still be running.
+ * process[qr1_reporter-4, pid 3788]: required SIGKILL. May still be running.
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
+turtlebot@turtlebot-Aspire-E3-111:~$ rosrun rob1514 qr1_reporter.py 'normal'
+[INFO] [1584312402.701149]: qr_reporter node running in normal mode
+^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^[[B^[[B^[[A^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^[[A^[[B^C^C^C[INFO] [1584312445.107170]: QR Code --> 8
+turtlebot@turtlebot-Aspire-E3-111:~$ rosrun rob1514 qr1_reporter.py 'normal'
+[INFO] [1584312461.797516]: qr_reporter node running in normal mode
+[INFO] [1584312469.079566]: QR Code --> 8
+[INFO] [1584312469.813918]: QR Code --> 8
+[INFO] [1584312470.550777]: QR Code --> 8
+[INFO] [1584312471.285341]: QR Code --> 8
+[INFO] [1584312472.023131]: QR Code --> 8
+[INFO] [1584312472.770940]: QR Code --> 8
+[INFO] [1584312473.494837]: QR Code --> 8
+[INFO] [1584312474.225495]: QR Code --> 8
+[INFO] [1584312479.220124]: QR Code --> 8
+[INFO] [1584312482.374939]: QR Code --> 8
+[INFO] [1584312483.233601]: QR Code --> 8
+[INFO] [1584312483.960480]: QR Code --> 8
+[INFO] [1584312484.691408]: QR Code --> 8
+[INFO] [1584312485.419705]: QR Code --> 8
+[INFO] [1584312486.148834]: QR Code --> 8
+[INFO] [1584312486.881208]: QR Code --> 8
+[INFO] [1584312487.604796]: QR Code --> 8
+[INFO] [1584312488.336231]: QR Code --> 8
+[INFO] [1584312517.898847]: QR Code --> 8
+[INFO] [1584312518.618850]: QR Code --> 8
+[INFO] [1584312519.342541]: QR Code --> 8
+[INFO] [1584312520.074818]: QR Code --> 8
+[INFO] [1584312520.802209]: QR Code --> 8
+^C^C^C^C^C^C^C^C[INFO] [1584312553.115923]: QR Code --> 8
+turtlebot@turtlebot-Aspire-E3-111:~$ 
+
