@@ -17,28 +17,39 @@ def nav_to_point_client(x, y, r0, r1, r2, r3):
 
 def load_waypoints(file):
     rospy.loginfo('Load waypoints from %s', file)
+    
+    pub = rospy.Publisher('nav_result', String, queue_size = 100)
 
     with open(file) as json_file:
-    	data = json.load(json_file)
-    	for p in data['points']:
-	    x = p['x']
-	    y = p['y']
-	    r0 = p['r0']
-	    r1 = p['r1']
-	    r2 = p['r2']
-	    r3 = p['r3']
-	    rospy.loginfo('Goto (%s, %s) (%s, %s, %s, %s) => %s', x, y, r0, r1, r2, r3,  nav_to_point_client(x, y, r0, r1, r2, r3))
+        data = json.load(json_file)
+        for p in data['points']:
+            id = p['id']
+            x = p['x']
+            y = p['y']
+            r0 = p['r0']
+            r1 = p['r1']
+            r2 = p['r2']
+            r3 = p['r3']
+            
+            result = nav_to_point_client(x, y, r0, r1, r2, r3)
+            rospy.loginfo('Goto [%d] (%s, %s) (%s, %s, %s, %s) => %s', id, x, y, r0, r1, r2, r3, result)
+            pub.publish('id-' + str(id) + '-' + result)
+    
+    # time to dock
+    rospy.loginfo('All waypoints have finished --> go to dock')
+    pub.publish('GotoDock')
 
 
 if __name__ == "__main__":
     
     if len(sys.argv) >= 2:
-	rospy.init_node('point_feeder')
-	
-	try:
+        rospy.init_node('point_feeder')
+        
+        try:
             load_waypoints(str(sys.argv[1]))
-	except rospy.ROSInterruptException:
-	    rospy.loginfo('node shutdown')	
+        except rospy.ROSInterruptException:
+            rospy.loginfo('node shutdown')
+    
     else:
-	print("point_feeder: Please provide a json file of waypoints in order!")
+        print("point_feeder: Please provide a json file of waypoints in order!")
 
