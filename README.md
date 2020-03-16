@@ -1,7 +1,7 @@
 autobot (UofT ROB1514 Project)
 ============
 
-This project is to run turtlebot on a prebuilt .pgm map autonomous. Explore all the areas in the map to find QR code and then scan/decode the QR code. At the end, come back to the charging station and perform autodock, speak all the words in a meaningful sentence.
+This project is to run turtlebot using ROS on a prebuilt .pgm map autonomous. Explore all the areas in the map to find QR code and then scan/decode the QR code. At the end, come back to the charging station and perform autodock, speak all the words in a meaningful sentence.
 
 
 ## Running whole project using launch file:
