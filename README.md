@@ -1,6 +1,47 @@
 autobot (UofT ROB1514 Project)
 ============
 
+This project is to run turtlebot on a prebuilt .pgm map autonomous. Explore all the areas in the map to find QR code and then scan/decode the QR code. At the end, come back to the charging station and perform autodock, speak all the words in a meaningful sentence.
+
+
+## Running whole project using launch file:
+
+**Running on robot notebook:**
+
+1. Source `rob1514` package
+
+```
+$ source ~/autobot/devel/setup.bash
+```
+
+2. Run basic turtlebot bringup, navigation stack and amcl with the prebuilt pgm map
+
+```
+$ roslaunch rob1514 turtlebot_nav_basic.launch
+```
+
+3. Run autobot rob1514 nodes
+
+```
+$ roslaunch rob1514 autobot.launch
+```
+
+
+## Flow Control:
+
+- `timer.py` is used to control the whole process with regard to time
+- `timer.py` subscribes to `nav_result` and `qr_word` topics in order to receive the decoded QR code and navigation result from navigate_to_point
+- `timer.py` takes 3 arguments: mode, return time and speak time. `mode` can be 'normal' or 'fake' ('fake' is used to run simulation with fake data). `return time` is an integer in second to specify the maximum time allowed before going to the return trip. `speak time` is used to specifiy the maximum time allowed to speak the sentence.
+
+**Running on robot notebook:**
+
+Below is an example with return time as 30 seconds and speak time as 40 seconds. It's running in normal mode.
+
+```
+$ rosrun rob1514 timer.py 'normal-30-40'
+```
+
+
 ## Navigation:
 
 - Use ROS Navigation Stack as base to feed commands to move_base
@@ -11,16 +52,29 @@ autobot (UofT ROB1514 Project)
 
 **Running on robot notebook:**
 
+`navigate_to_point.py` runs as a action server and takes a goal and send to navigation stack.
+
 ```
 $ rosrun rob1514 navigate_to_point.py
 ```
 
-Once the navigate_to_point service server boot up and ready to accept points, run below:
+`point_feeder.py` reads all the waypoints from a json file and send these waypoints one by one in order to `navigate_to_point.py`. `point_feeder.py` also takes an argument for initial delay. As soon as all the waypoints have been completed, a "GotoDock" message will be published. Once the navigate_to_point service server boot up and ready to accept points, run below (120 is the initial delay in seconds. in this case, point_feeder will wait for 120 seconds at the beginning before sending the waypoints):
 
 ```
-$ roslaunch rob1514 global_planner.launch
+$ rosrun rob1514 point_feeder.py 'path_to_json_file' 120
 ```
 
+
+## Auto-docking:
+
+- `activate_autodock.py` is used to active auto-docking process
+- `activate_autodock.py` subscribes to `nav_result`. As soon as "GotoDock" message is received from point_feeder.py, the autodock will be activated.
+
+**Running on robot notebook:**
+
+```
+$ rosrun rob1514 activate_autodock
+```
 
 
 ## QR code scan, decode and form meaningful sentence procedure:
