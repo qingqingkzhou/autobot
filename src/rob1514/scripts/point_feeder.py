@@ -44,6 +44,9 @@ if __name__ == "__main__":
     
     if len(sys.argv) >= 2:
         rospy.init_node('point_feeder')
+
+        # add a delay (in seconds) at the beginning
+        rospy.sleep(120.)
         
         try:
             load_waypoints(str(sys.argv[1]))
