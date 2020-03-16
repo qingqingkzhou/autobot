@@ -45,7 +45,12 @@ if __name__ == "__main__":
     if len(sys.argv) >= 2:
         rospy.init_node('point_feeder')
         
+        # delay (in seconds) at the beginning
+        rospy.loginfo('point_feeder: Waiting for %s seconds', sys.argv[2])
+        rospy.sleep(int(sys.argv[2]))
+        
         try:
+            rospy.loginfo('point_feeder: Start ...')
             load_waypoints(str(sys.argv[1]))
         except rospy.ROSInterruptException:
             rospy.loginfo('node shutdown')

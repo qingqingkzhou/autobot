@@ -42,10 +42,9 @@ def nav_callback(data, mode):
         rospy.loginfo('time_check: Final stage --> display and speak the sentence')
         speak(g_sentence, mode)
         
+        # autodocking will be activated by activate_autodock.py upon receiving 'GotoDock'
         rospy.loginfo('time_check: Final stage --> start auto docking')
-        if mode == 'normal':
-            #TODO: run auto dock code:
-            pass
+        
     else:
         rospy.loginfo('time_check: unknown nav_result')
 
