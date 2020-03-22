@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rob1514_simulation</name>
+  <version>0.0.0</version>
+  <description>The rob1514_simulation package</description>
+  <maintainer email="adam.heins@robotics.utias.utoronto.ca">Adam Heins</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
