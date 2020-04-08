@@ -8,5 +8,5 @@
     <node name="time_check" pkg="rob1514" type="time_check.py" args="10 20" output="screen" />
     <node name="qr_reporter" pkg="rob1514" type="qr_reporter.py" output="screen" />
     <node name="nav_to_point_server" pkg="rob1514" type="navigate_to_point.py" args="normal" output="screen" />
-    <node name="point_feeder" pkg="rob1514" type="point_feeder.py" args="/home/qingqing/autobot/src/rob1514/launch/waypoints-sim.json 10" output="screen" />
+    <node name="point_feeder" pkg="rob1514" type="point_feeder.py" args="/home/qingqing/autobot/src/rob1514/launch/waypoints-sim.json 1" output="screen" />
 </launch>

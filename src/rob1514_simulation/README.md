@@ -5,9 +5,11 @@ practice [Gazebo](http://gazebosim.org/) world based on the portion of UTIAS
 designated for the scavenger hunt project. Gazebo should already be installed
 alongside ROS.
 
-The simulated world used for the actual demo will use the same layout of walls
-and doors, but objects may be moved around. QR codes will be different, and in
-different locations, but will be placed at roughly the same height.
+There are two simulation worlds: practice and competition. Objects differ
+slightly between each. QR codes are different and are in different locations.
+The practice world is to be used for building your map and tuning your
+algorithms. The competition world should only be used to produce a video demo
+run.
 
 ## Install
 Clone the repository into your catkin workspace:
@@ -25,10 +27,12 @@ where you've replaced `<path_to_catkin_ws>` with the actual path.
 Build and source the workspace as per usual ROS procedure.
 
 ## Run
+### Practice World
 Once the workspace has been built and sourced, just run
 ```
-roslaunch rob1514_simulation simulation.launch
+roslaunch rob1514_simulation practice.launch
 ```
+to launch the practice world.
 
 This should launch Gazebo and load the simulated UTIAS world. A turtlebot
 should spawn at the map's origin, which you can control like a normal
@@ -41,6 +45,11 @@ You can, of course, view all ROS topics using `rostopic list`. Topics for the
 front-facing camera are prefixed with `/camera`, while the topics for the
 side-facing camera are prefixed with `/head_camera`.
 
+### Competition World
+To launch the competion world, instead run
+```
+roslaunch rob1514_simulation competition.launch
+```
 
 ## QR Codes
 There are seven QR codes distributed throughout the simulated world. QR codes
