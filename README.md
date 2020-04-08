@@ -13,7 +13,7 @@ This project is to run turtlebot using ROS on a prebuilt .pgm map autonomous. Ex
 $ source ~/autobot/devel/setup.bash
 ```
 
-2. Launch competition world simulation
+2. Launch competition world simulation. After gazebo window open, click `Reset Time` button in gazebo to reset the *Sim Time*.
 
 ```
 $ roslaunch rob1514_simulation competition.launch 
