@@ -3,6 +3,34 @@ autobot (UofT ROB1514 Project)
 
 This project is to run turtlebot using ROS on a prebuilt .pgm map autonomous. Explore all the areas in the map to find QR code and then scan/decode the QR code. At the end, come back to the charging station and perform autodock, speak all the words in a meaningful sentence.
 
+## Running project in gazebo simulation:
+
+**Running on ubuntu 16.04 LTS: (VM works too)**
+
+1. Source `rob1514` and `rob1514_simulation` package
+
+```
+$ source ~/autobot/devel/setup.bash
+```
+
+2. Launch competition world simulation
+
+```
+$ roslaunch rob1514_simulation competition.launch 
+```
+
+3. Launch amcl with proper map yaml file
+
+```
+$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/qingqing/autobot/maps/utias-sim-7.yaml
+```
+
+4. Launch autobot project
+
+```
+$ roslaunch rob1514 autobot_sim.launch
+```
+
 
 ## Running whole project using launch file:
 
