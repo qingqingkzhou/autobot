@@ -18,7 +18,7 @@ class image_converter:
     self.image_sub = rospy.Subscriber("/head_camera/image_raw", Image, self.callback)
     self.pub = rospy.Publisher('qr_word', String, queue_size = 100)
     self.word_array = []
-    self.counter = 50
+    self.counter = 200
 
   def callback(self,data):
     try:
@@ -33,15 +33,14 @@ class image_converter:
     for obj in decodedObjects:
       QR_detected = True
       
-      if self.counter >= 50:
+      if self.counter >= 500:
         qr_word = str(obj.data)
         print("[QR Reporter] QR: ", qr_word, "\n")
-        
         self.word_array.append(qr_word)
+        print("[QR Reporter] => ", self.word_array, "\n")
       
     if QR_detected:
       if self.counter > 0:
-        print("[QR Reporter] => ", self.word_array, "\n")
         self.pub.publish(', '.join(self.word_array))
       
       self.counter = 0
