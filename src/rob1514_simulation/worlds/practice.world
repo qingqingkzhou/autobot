@@ -1700,8 +1700,8 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>2138 577000000</sim_time>
-      <real_time>372 734955734</real_time>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
       <wall_time>1584652352 743740835</wall_time>
       <iterations>359010</iterations>
       <model name='Construction Barrel'>
