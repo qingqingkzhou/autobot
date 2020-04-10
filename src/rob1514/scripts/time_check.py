@@ -80,7 +80,8 @@ if __name__ == '__main__':
         counter += 1
         
     rospy.loginfo('[time_check] Process completed')
-    
+    rospy.loginfo('[time_check] Sentence: %s', g_sentence)
+
     while not rospy.is_shutdown():
         rospy.spin()
         
