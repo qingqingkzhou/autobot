@@ -38,11 +38,9 @@ class image_converter:
         print("[QR Reporter] QR: ", qr_word, "\n")
         self.word_array.append(qr_word)
         print("[QR Reporter] => ", self.word_array, "\n")
+        self.pub.publish(' '.join(self.word_array))
       
     if QR_detected:
-      if self.counter > 0:
-        self.pub.publish(', '.join(self.word_array))
-      
       self.counter = 0
     else:
       self.counter += 1
