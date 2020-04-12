@@ -3,6 +3,8 @@
 import sys
 import rospy
 from std_msgs.msg import String
+from google import google
+import string
 
 g_sentence = ""
 g_current_waypoint = 0
@@ -12,48 +14,98 @@ def speak(sentence):
 
 
 def words_callback(data):
-    num_words = len(data.data.split())
+    num_words = len(data.data.split(', '))
     global g_sentence
     g_sentence = data.data
     
-    rospy.loginfo('[time_check] received QR words-->[%d] %s', num_words, g_sentence)
+    rospy.loginfo('[QR] received words-->[%d] %s', num_words, g_sentence)
 
 
 def nav_callback(data):
     global g_current_waypoint
     
-    rospy.loginfo('[time_check] nav_result = %s', data.data)
+    rospy.loginfo('[Nav] nav_result = %s', data.data)
     
     if 'id' in data.data: 
         g_current_waypoint = int(data.data.split('-')[1])
-        rospy.loginfo('[time_check] Moved to waypoint %d', g_current_waypoint)
+        rospy.loginfo('[Nav] Moved to waypoint %d', g_current_waypoint)
         
     elif data.data == 'GotoDock':    
-        rospy.loginfo('[time_check] Final stage --> display and speak the sentence')
+        rospy.loginfo('[Nav] Final stage --> display and speak the sentence')
         speak(g_sentence)
         
         # autodocking will be activated by activate_autodock.py upon receiving 'GotoDock'
-        rospy.loginfo('[time_check] Final stage --> start auto docking (not performed in simulation)')
+        rospy.loginfo('[Nav] Final stage --> start auto docking (not performed in simulation)')
         
     else:
-        rospy.loginfo('[time_check] unknown nav_result')
+        rospy.loginfo('[Nav] unknown nav_result')
 
             
 
 def time_checkpoint(counter, return_time, finish_time):
     # invoked every 1 minute
     #rospy.loginfo('Timer called at %d minutes', counter)
-
     if counter == return_time:
         rospy.loginfo('[time_check] Return Time ---> %d minutes', counter)
         rospy.loginfo('[time_check] Current waypoint %d', g_current_waypoint)
         
-    elif counter == finish_time:
-        rospy.loginfo('[time_check] Finish Time ---> %d minutes', counter)
-        speak(g_sentence)
+    #elif counter == finish_time:
+        # speak(g_sentence)
+    
+    else:
+        rospy.loginfo('[time_check] Running for %d minutes', counter)
+
+
+def get_search_result(words, num_page):
+    search_results = google.search(words, num_page)
+    results = []
+    for result in search_results:
+        results.append(result.description)
+
+    return results
+
+def contain_all_words(words, doc_str):
+    for word in words:
+        if word not in doc_str:
+            return False
+
+    return True
+
+def contain_any_word(words, doc_str):
+    for word in words:
+        if word in doc_str:
+            return True
+
+    return False    
+
+def get_sentence(words):
+    sentence = []
+    results = get_search_result(words, 3)
+    check_words = words.split(', ')
+    #print(check_words)
+
+    # extract only valid results from google search results
+    valid_results = [r for r in results if contain_all_words(check_words, r)]
+    
+    for r in valid_results:
+        r_array = r.split()
+        valid_words = [e for e in r_array if contain_any_word(check_words, e)]
+        if len(valid_words) == len(check_words):
+            for valid_word in valid_words:
+                for check_word in check_words:
+                    if check_word in valid_word:
+                        start = valid_word.find(check_word)
+                        if start > 0:
+                            valid_word = valid_word[start:]
+            
+            sentence = ' '.join(valid_words)
+
+            return sentence
 
 
 if __name__ == '__main__':
+
+    #goal_str = "I, afraid, I'm, sorry, that, can't, Dave, I'm, do"
     
     counter = 1
     
@@ -80,7 +132,7 @@ if __name__ == '__main__':
         counter += 1
         
     rospy.loginfo('[time_check] Process completed')
-    rospy.loginfo('[time_check] Sentence: %s', g_sentence)
+    rospy.loginfo('[time_check] Sentence: %s', get_sentence(g_sentence))
 
     while not rospy.is_shutdown():
         rospy.spin()
