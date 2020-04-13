@@ -11,6 +11,17 @@ from cv_bridge import CvBridge, CvBridgeError
 import numpy as np
 from pyzbar import pyzbar
 
+
+def count_word(word_array, word):
+  counter = 0
+
+  for w in word_array:
+    if word in w:
+      counter += 1
+
+  return counter 
+
+
 class image_converter:
 
   def __init__(self):
@@ -18,7 +29,8 @@ class image_converter:
     self.image_sub = rospy.Subscriber("/head_camera/image_raw", Image, self.callback)
     self.pub = rospy.Publisher('qr_word', String, queue_size = 100)
     self.word_array = []
-    self.counter = 200
+    self.counter = 200 
+
 
   def callback(self,data):
     try:
@@ -35,10 +47,12 @@ class image_converter:
       
       if self.counter >= 500:
         qr_word = str(obj.data)
-        print("[QR Reporter] QR: ", qr_word, "\n")
-        self.word_array.append(qr_word)
-        print("[QR Reporter] => ", self.word_array, "\n")
-        self.pub.publish(', '.join(self.word_array))
+
+        if count_word(self.word_array, qr_word) < 2:
+          print("[QR Reporter] QR: ", qr_word, "\n")
+          self.word_array.append(qr_word)
+          print("[QR Reporter] => ", self.word_array, "\n")
+          self.pub.publish(', '.join(self.word_array))
       
     if QR_detected:
       self.counter = 0
