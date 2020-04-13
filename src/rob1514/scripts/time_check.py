@@ -21,27 +21,6 @@ def words_callback(data):
     rospy.loginfo('[QR] received words-->[%d] %s', num_words, g_sentence)
 
 
-def nav_callback(data):
-    global g_current_waypoint
-    
-    rospy.loginfo('[Nav] nav_result = %s', data.data)
-    
-    if 'id' in data.data: 
-        g_current_waypoint = int(data.data.split('-')[1])
-        rospy.loginfo('[Nav] Moved to waypoint %d', g_current_waypoint)
-        
-    elif data.data == 'GotoDock':    
-        rospy.loginfo('[Nav] Final stage --> display and speak the sentence')
-        speak(g_sentence)
-        
-        # autodocking will be activated by activate_autodock.py upon receiving 'GotoDock'
-        rospy.loginfo('[Nav] Final stage --> start auto docking (not performed in simulation)')
-        
-    else:
-        rospy.loginfo('[Nav] unknown nav_result')
-
-            
-
 def time_checkpoint(counter, return_time, finish_time):
     # invoked every 1 minute
     #rospy.loginfo('Timer called at %d minutes', counter)
@@ -102,11 +81,30 @@ def get_sentence(words):
 
             return sentence
 
+def nav_callback(data):
+    global g_current_waypoint
+    
+    rospy.loginfo('[Nav] nav_result = %s', data.data)
+    
+    if 'id' in data.data: 
+        g_current_waypoint = int(data.data.split('-')[1])
+        rospy.loginfo('[Nav] Moved to waypoint %d', g_current_waypoint)
+        
+    elif data.data == 'GotoDock':    
+        # rospy.loginfo('[Nav] Final stage --> display and speak the sentence')
+        # speak(g_sentence)
+        
+        # autodocking will be activated by activate_autodock.py upon receiving 'GotoDock'
+        rospy.loginfo('[Nav] Final stage --> start auto docking (not performed in simulation)')
+        rospy.loginfo('[time_check] Sentence: %s', get_sentence(g_sentence))
+        rospy.loginfo('[time_check] Process completed')
+        
+    else:
+        rospy.loginfo('[Nav] unknown nav_result')
+
 
 if __name__ == '__main__':
 
-    #goal_str = "I, afraid, I'm, sorry, that, can't, Dave, I'm, do"
-    
     counter = 1
     
     # in minutes
@@ -131,8 +129,7 @@ if __name__ == '__main__':
         time_checkpoint(counter, return_time, finish_time)
         counter += 1
         
-    rospy.loginfo('[time_check] Process completed')
-    rospy.loginfo('[time_check] Sentence: %s', get_sentence(g_sentence))
+    rospy.loginfo('[time_check] Exit')
 
     while not rospy.is_shutdown():
         rospy.spin()
