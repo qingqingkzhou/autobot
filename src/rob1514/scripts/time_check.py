@@ -8,7 +8,8 @@ import string
 
 g_sentence = ""
 g_current_waypoint = 0
-  
+g_exit = False
+
 def speak(sentence):
     rospy.loginfo('[time_check] Say: %s', sentence)
 
@@ -36,6 +37,9 @@ def time_checkpoint(counter, return_time, finish_time):
 
 
 def get_search_result(words, num_page):
+
+    rospy.loginfo('[Google] search string: %s', words)
+
     search_results = google.search(words, num_page)
     results = []
     for result in search_results:
@@ -83,6 +87,7 @@ def get_sentence(words):
 
 def nav_callback(data):
     global g_current_waypoint
+    global g_exit
     
     rospy.loginfo('[Nav] nav_result = %s', data.data)
     
@@ -98,6 +103,8 @@ def nav_callback(data):
         rospy.loginfo('[Nav] Final stage --> start auto docking (not performed in simulation)')
         rospy.loginfo('[time_check] Sentence: %s', get_sentence(g_sentence))
         rospy.loginfo('[time_check] Process completed')
+
+        g_exit = True
         
     else:
         rospy.loginfo('[Nav] unknown nav_result')
@@ -123,6 +130,9 @@ if __name__ == '__main__':
     
     while not rospy.is_shutdown() and counter <= finish_time:
         
+        if g_exit:
+            break
+
         # sleep for 1 minutes
         rospy.sleep(60.)
 
@@ -130,7 +140,5 @@ if __name__ == '__main__':
         counter += 1
         
     rospy.loginfo('[time_check] Exit')
-
-    while not rospy.is_shutdown():
-        rospy.spin()
-        
+    rospy.loginfo('[time_check] Sentence: %s', get_sentence(g_sentence))
+    
