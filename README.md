@@ -25,7 +25,13 @@ $ roslaunch rob1514_simulation competition.launch
 $ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/qingqing/autobot/maps/utias-sim-7.yaml
 ```
 
-4. Launch autobot project
+4. Launch rviz
+
+```
+ roslaunch turtlebot_rviz_launchers view_navigation.launch 
+ ```
+ 
+5. Launch autobot project
 
 ```
 $ roslaunch rob1514 autobot_sim.launch
