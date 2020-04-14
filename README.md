@@ -150,3 +150,9 @@ $ rostopic echo /qr_word
 ```
 $ rostopic pub sentence std_msgs/String "The meaningful sentence is here"
 ```
+
+
+## Sentence Formation:
+We are using Google Search API to find the meaningful sentence based on given words (from scanned QR codes). The implementation is based on the [Google-Search-API](https://github.com/abenassi/Google-Search-API) python library. 
+
+Current implementation will send a query with scanned words and collect 3 search results. After parsing the results' description, extract the part of the sentence that matches the scanned words.
